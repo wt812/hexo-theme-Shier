@@ -1,0 +1,42 @@
+<%- partial('_partial/logo') %>
+<%- partial('_partial/nav') %>
+<!-- 内容 -->
+<div class="cont">
+<div style="position:relative">
+<i class="xf te" onclick="window.history.go(-1)">➜</i> 
+
+<%= page.title %>
+<p><%= date(page.date, "YYYY/MM/DD") %>
+</div>
+<%- page.content %> 
+</div>
+
+<!-- tags -->
+<% if (page.tags && page.tags.length){ %>
+  <%- list_tags(page.tags, {
+    show_count: false,
+    class: 'post-tag'
+  }) %>
+<% } %>
+
+<!-- 评论 -->
+
+<!-- 上一篇 下一篇 -->
+<div class="prev_next">
+ <% if (page.prev){ %>
+    <a href="<%- url_for(page.prev.path) %>">
+    上一篇&nbsp;&nbsp;<%= page.prev.title %>
+    </a>
+ <% } %>
+
+<% if (page.next){ %>
+    <a href="<%- url_for(page.next.path) %>">
+    下一篇&nbsp;&nbsp;<%= page.next.title %>
+    </a>
+<% } %>
+</div>
+
+<!-- 留言 -->
+<% if (theme.valine.enable && page.comments) { %>
+    <div id="vcomments"></div>
+<% } %>

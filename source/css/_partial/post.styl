@@ -1,0 +1,68 @@
+.giveFive {
+  font-size: 40px;
+  margin: 40px 0 -100px 4px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  transform: translate(0, -50%);
+
+  span {
+    display: inline-block;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    transform: translate(50%, 0);
+    animation: you infinite ease-in-out 6s;
+  }
+  
+  &:before, 
+  &:after {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    font-size: 40px;
+  }
+  
+  &:before {
+    content: '🙏';
+    width: 50%;
+    transform: translate(-50%, 0);
+    animation: me infinite ease-in-out 6s;
+  }
+  
+  &:after {
+    content: '❤️';
+    left: 0;
+    top: 0;
+    transform: scale(0) rotate(0);
+    animation: star infinite ease-in-out 6s;
+  }
+}
+
+@keyframes me {
+  0% {transform: translate(-50%, 0);}
+  6% {transform: translate(0, 0);}
+  94% {transform: translate(0, 0);}
+  100% {transform: translate(-50%, 0);}
+}
+
+@keyframes you {
+  0% {transform: translate(50%, 0);}
+  6% {transform: translate(0, 0);}
+  94% {transform: translate(0, 0);}
+  100% {transform: translate(50%, 0);}
+}
+
+@keyframes star {
+  0% {transform: scale(0) rotate(0); top: 0;}
+  10% {transform: scale(.5) rotate(0); top: 0;}
+  20% {transform: scale(0) rotate(0); top: 0%;}
+  30% {transform: scale(.5) rotate(0deg); top: 0%;}
+  40% {transform: scale(0) rotate(0deg); top: 0%;}
+  50% {transform: scale(.6) rotate(0deg); top: 0%;}
+  60% {transform: scale(0) rotate(0deg); top: 0%;}
+  70% {transform: scale(.7) rotate(0deg); top: 0%;}
+  80% {transform: scale(0) rotate(0deg); top: 0%;}
+  90% {transform: scale(1) rotate(0deg); top: 0%;}
+  100% {transform: scale(0) rotate(0deg); top: 0%;}
+}

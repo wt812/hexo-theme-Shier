@@ -1,0 +1,61 @@
+<%- partial('_partial/logo') %>
+<%- partial('_partial/nav') %>
+
+<!-- list -->
+<div class="list">
+    <% var last; %>
+        <% page.posts.each(function (post) { %>
+            <% var year = post.date.year(); %>
+            <% if (last != year){ %>
+                <!-- 年份 -->
+                <h2 class="masked"><%= year %></h2>
+                <% last = year; %>
+            <% } %>
+    <div>
+        <span class="left">
+            <%- full_date(post.date, 'MM-DD') %>
+        </span>
+        <span class="right">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <!-- 
+        <% if (post.excerpt && post.excerpt.length) { %> 
+            <i><%= strip_html(post.excerpt) %></i>
+        <% } else if( post.photos && post.photos.length){ %>
+            <img src="<%- post.photos%>" alt="">
+        <% } else { %>
+            <i><%= truncate(strip_html(post.content), { length: 100 }) %></i>
+        <% } %>
+         -->
+
+        <% if (post.excerpt && post.excerpt.length && post.photos && post.photos.length) { %> 
+        <!-- 不加more或加more 加photos图 -->
+            <i><%= strip_html(post.excerpt)%></i>
+            <% post.photos.forEach(function(photo, i){ var photoInfo = post.photoInfos && post.photoInfos[i]; %>
+                <div class="imgcenter">
+                    <img class="initImg" src="<%- url_for(photo) %>" alt="">
+                </div>
+            <% }) %>
+        <% } else if( post.excerpt && post.excerpt.length){ %>
+            <i><%= strip_html(post.excerpt) %></i>
+        <% } else if( post.photos && post.photos.length){ %>
+            <% post.photos.forEach(function(photo, i){ var photoInfo = post.photoInfos && post.photoInfos[i]; %>
+                <div class="imgcenter">
+                    <img class="initImg" src="<%- url_for(photo) %>" alt="">
+                </div>
+            <% }) %>
+        <% } %>
+
+        <!-- tags 
+        <% if (post.tags && post.tags.length){ %>
+          <%- list_tags(post.tags, {
+            show_count: false,
+            class: 'post-tag'
+          }) %>
+        <% } %>
+        -->
+        </span>
+    </div>         
+    <% }) %>
+</div>
+
+

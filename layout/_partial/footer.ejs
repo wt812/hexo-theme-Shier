@@ -1,0 +1,38 @@
+<!-- 分页 -->
+<%- partial('_partial/paginator') %>
+
+<!-- footer -->
+<div class="footer" id="footer">
+    <!-- 统计uv、pv 
+    <% if (theme.counter.enable){ %>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <%= __('footer.site_pv') %>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;&nbsp;
+        <%= __('footer.site_uv') %>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>
+    <% } %>
+    -->
+
+    <!-- off or on -->
+    <div class="abc">
+    <a href="#top" class="goTop xf">TOP</a>
+    <div class="xf">
+    <label class="el-switch el-switch-blue el-switch-sm">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+    </div>
+    </div>
+    <br>
+    <%= config.author %>
+    <a style="color:#222" href="<%- theme.hexo_links %>"><%= config.thanks %></a>
+    
+
+</div>
+
+<!-- 评论 -->
+<input type="hidden" id="web_style" value="<%= theme.style %>">
+<input type="hidden" id="valine_appid" value="<%= theme.valine.appId %>">
+<input type="hidden" id="valine_appKey" value="<%= theme.valine.appKey %>">
+<%- js('libs/jquery.min.js') %>
+<%- js('libs/highlight/highlight.pack.js') %>
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<%- js('js/js.js') %>

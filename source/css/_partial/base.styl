@@ -1,0 +1,122 @@
+html,
+body
+    margin: 0
+    padding: 0
+    border: 0
+    font-size: 100%
+    font: inherit
+    vertical-align: baseline
+    
+hr
+    display: block; 
+    height:1px; 
+    *color:#f60;/* for ie6 ie7 */
+    background-color:#eee; 
+    border:none; 
+h1
+    font-size 35px
+    font-weight 900
+h2
+    font-size 30px
+    font-weight 900
+h3
+    font-size 25px
+    font-weight 900
+h4
+    font-size 20px
+    font-weight 700 
+h5 
+    font-size 15px
+    font-weight 500
+h6 
+    font-size 12px
+    font-weight 300
+h1,h2,h3,h4,h5,h6
+    font-family "Iowan Old Style", "Ovo", "Hoefler Text", Georgia, "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular", "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback", "WenQuanYi Micro Hei", sans-serif
+table,th,td
+    border-collapse collapse
+    border-spacing 0
+    border 1px solid #222
+    border-spacing 0px !important
+    padding 3px 10px
+    font-size: 14px
+
+blockquote
+    border-left 5px #aaa solid
+    margin 10px 10px 10px 0
+    p
+        padding-left 12px
+
+img
+    max-width 100% 
+    min-width auto 
+    border-radius 2px   
+    display block   
+
+.pre{
+    border-radius:5px
+}
+.nav div a::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.nav div a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav div a::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height 10px;
+  margin-top: 12px;
+  top: 0px; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: rgba(241 105 37,.2);
+  z-index: -1;
+  transition: transform .3s ease;
+}
+
+.nav div a{
+  position: relative;
+}
+
+ul li a{
+    color:#7B87FFFF
+}
+    
+::selection {
+background: #F16925;
+color: #fff;
+}
+
+::-moz-selection {
+background: #F16925;
+color: #fff;
+}
+
+::selection {
+background: #F16925;
+color: #fff;
+}
+
+::-moz-selection {
+background: #F16925;
+color: #fff;
+}
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+    .masked{
+        background-image: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-background-size: 200% 100%;
+        -webkit-animation: masked-animation 4s infinite linear;
+    }
+}
+@-webkit-keyframes masked-animation {
+    0%  { background-position: 0 0;}
+    100% { background-position: -100% 0;}
+}
+

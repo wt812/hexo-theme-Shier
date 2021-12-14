@@ -1,0 +1,86 @@
+<!--nav-->
+<div style="position:relative">
+<span style="width:100%; position: absolute; z-index: -1; float:left; padding:20px 0 0 0">
+<svg style="float:right; enable-background:new 0 0 173.01 106.17;" width="260" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 173 106">
+<style type="text/css">
+    .st0{opacity:.2;}
+    .st1{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);}
+    .st2{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);}
+</style>
+<g>
+    <g class="st0">
+        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="38.2747" y1="115.6288" x2="151.2566" y2="2.6469">
+            <stop  offset="0" style="stop-color:rgb(255,235,200);stop-opacity:.02"/>
+            <stop  offset="0.1" style="stop-color:rgb(255,204,171);stop-opacity:.04"/>
+            <stop  offset="0.2" style="stop-color:rgb(255,119,36);stop-opacity:.06"/>
+            <stop  offset="0.3" style="stop-color:rgb(255,09,106);stop-opacity:.08"/>
+            <stop  offset="0.4" style="stop-color:rgb(245,119,36);stop-opacity:.09"/>
+            <stop  offset="0.5" style="stop-color:rgb(245,119,36);stop-opacity:.1"/>
+            <stop  offset="0.6" style="stop-color:rgb(245,119,36);stop-opacity:.3"/>
+            <stop  offset="0.7" style="stop-color:rgb(245,119,36);stop-opacity:.5"/>
+            <stop  offset="0.8" style="stop-color:rgb(245,119,36);stop-opacity:.7"/>
+            <stop  offset="0.9" style="stop-color:rgb(245,119,36);stop-opacity:.9"/>
+            <stop  offset="1" style="stop-color:rgb(245,119,36);stop-opacity:1"/>
+        </linearGradient>
+        <path class="st1" d="M151.76,40.24L2.64,90.37L99.23,107l70.69-62.12L151.76,40.24z"/>
+    </g>
+    <g>
+        <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="159.892" y1="42.2159" x2="131.5523" y2="-5.7781">
+            <stop  offset="0" style="stop-color:#FFB91F"/>
+            <stop  offset="0.1535" style="stop-color:#F77A23"/>
+            <stop  offset="0.3554" style="stop-color:#EE5F26"/>
+            <stop  offset="0.562" style="stop-color:#E84C29"/>
+            <stop  offset="0.7741" style="stop-color:#E4412A"/>
+            <stop  offset="1" style="stop-color:#E33D2B"/>
+        </linearGradient>
+        <path class="st2" d="M151.9,39.38v-1.32l15.74,3.48V6.25l-15.74,4.11V8.32l18.45-5.13v40.61L151.9,39.38z M129.23,6.66l22.64,1.62
+            v31.1l-22.64,7.63V6.66z"/>
+    </g>
+</g>
+</svg>
+</span>
+
+<div class="nav">  
+    <% for (name in theme.menu) { %>
+    <div><a href="<%- url_for(theme.menu[name]) %>" ><%= name %></a></div>
+    <% } %>
+
+    <div class="search-right">
+      <input placeholder="搜索" id="local-search-input"/>  
+    </div>
+    
+    
+</div>
+</div>
+<div id="local-search-result"></div>
+<!-- <%- js('libs/jquery.min.js') %> -->
+<%- js('js/search.js') %>
+<!-- <% if (theme.search.enable) { %> -->
+    
+<% } %>
+<script type="text/javascript" id="local.search.active">
+    var inputArea = document.querySelector("#local-search-input");
+    var getSearchFile = function(){
+        var path = "/search.xml";
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    }
+    inputArea.onfocus = function(){ getSearchFile() }
+    var $resetButton = $("#search-form .fa-times");
+    var $resultArea = $("#local-search-result");
+    inputArea.oninput = function(){ $resetButton.show(); }
+    resetSearch = function(){
+        $resultArea.html("");
+        document.querySelector("#search-form").reset();
+        $resetButton.hide();
+        $(".no-result").hide();
+    }
+    inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+    //No search result
+    $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+        if (!$(e.target).text()) {
+            $(".no-result").show(100);
+        } else {
+            $(".no-result").hide();
+        }
+    })
+</script>
