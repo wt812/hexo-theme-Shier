@@ -38,6 +38,7 @@
 
 ``` shell
 git clone git@github.com:wt812/hexo-theme-Shier.git
+
 或者直接下载主题zip包解压至主题目录下，重命名为Shier
 ```
 
@@ -45,6 +46,7 @@ git clone git@github.com:wt812/hexo-theme-Shier.git
 
 ``` shell
 $ npm install hexo-generator-searchdb --save
+
 在站点的根目录下执行以下命令
 ```
 
@@ -52,16 +54,19 @@ $ npm install hexo-generator-searchdb --save
 ## 配置
 
 
-### 1. 修改Hexo目录下的_config.yml 的 **theme** 为 **hexo-themes-shier**
+#### 修改Hexo目录下的_config.yml 的 **theme** 为 **hexo-themes-shier**
 
-### 2. 语言配置
+#### 语言配置
 
-请在hexo文件下的"_config.yml"修改 **language** 为 **en** 或者 **zh-Hans**， 目前只支持这两种语言
+```shell
+请在hexo文件下的"_config.yml"
 
+修改 **language** 为 **en** 或者 **zh-Hans**， 目前只支持这两种语言
+```
 
-### 3. 修改配置
+#### 修改配置
 
-````yaml
+``` markdown
 # 当前版本 | Theme Version
 Hexo: "2.1"
 
@@ -123,7 +128,7 @@ counter:
 
 highlight:
   enable: true
-````
+```
 
 ### 4. 404 页面配置：
 
