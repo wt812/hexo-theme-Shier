@@ -2,8 +2,8 @@
 
 [Demo](http://zaole.net "Notebook")
 
-![](https://cdn.jsdelivr.net/gh/wt812/blogimg/web_mob.jpg)
-![](https://cdn.jsdelivr.net/gh/wt812/blogimg/web_pc.jpg)
+
+![](https://cdn.jsdelivr.net/gh/wt812/blogimg/123.jpg)
 
 # 主体
 
