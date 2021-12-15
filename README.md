@@ -1,4 +1,36 @@
-# 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：
+# hexo-themes-Shier
+
+[Notebook](http://zaole.net "Notebook")
+
+# 主体
+
+简约、美观、实用
+如果有任何建议欢迎issue，也可以提出pr。
+由于我不会css，pug和javascript，许多代码是能用就行，
+
+# 改进
+
+我在学世界语所以主题改名为Anatolo（
+增加了文章概要的选项
+增加了英语支持
+增加了可选的搜索框
+增加了可选的标签页和标签云
+增加了可选的toc支持和深度调整
+优化了css文件，优化了主题的颜色等，将部分css改为stylus方便编译
+调整了部分选项的可选性
+增加了nav menu的编辑支持
+增加了文章底部的copyright栏
+增加了文章的字数统计
+增加了主题的debug支持
+优化了部分代码
+增加了部分社交账号支持
+增加了显示网站备案号功能和百度统计
+
+
+
+# 使用
+
+### 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：
 
 ``` shell
 $ npm install hexo-generator-searchdb --save
