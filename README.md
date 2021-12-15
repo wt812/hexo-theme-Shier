@@ -66,7 +66,7 @@ $ npm install hexo-generator-searchdb --save
 
 #### 修改配置
 
-``` markdown
+```shell
 # 当前版本 | Theme Version
 Hexo: "2.1"
 
