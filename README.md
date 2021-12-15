@@ -72,11 +72,9 @@ $ npm install hexo-lazyload-image --save
 
 #### 2. 语言配置
 
-```shell
 请在hexo文件下的"_config.yml"
-
-```
 修改 **language** 为 `en` 或者 `zh-Hans`， 目前只支持这两种语言
+
 
 #### 3. 修改配置
 
