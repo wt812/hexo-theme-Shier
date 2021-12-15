@@ -1,6 +1,6 @@
 # hexo-themes-Shier
 
-[Notebook](http://zaole.net "Notebook")
+[Demo](http://zaole.net "Notebook")
 
 # 主体
 
@@ -10,21 +10,21 @@
 
 # 改进
 
-我在学世界语所以主题改名为Anatolo（
-增加了文章概要的选项
-增加了英语支持
-增加了可选的搜索框
-增加了可选的标签页和标签云
-增加了可选的toc支持和深度调整
-优化了css文件，优化了主题的颜色等，将部分css改为stylus方便编译
-调整了部分选项的可选性
-增加了nav menu的编辑支持
-增加了文章底部的copyright栏
-增加了文章的字数统计
-增加了主题的debug支持
-优化了部分代码
-增加了部分社交账号支持
-增加了显示网站备案号功能和百度统计
++ 我在学世界语所以主题改名为Anatolo（
++ 增加了文章概要的选项
++ 增加了英语支持
++ 增加了可选的搜索框
++ 增加了可选的标签页和标签云
++ 增加了可选的toc支持和深度调整
++ 优化了css文件，优化了主题的颜色等，将部分css改为stylus方便编译
++ 调整了部分选项的可选性
++ 增加了nav menu的编辑支持
++ 增加了文章底部的copyright栏
++ 增加了文章的字数统计
++ 增加了主题的debug支持
++ 优化了部分代码
++ 增加了部分社交账号支持
++ 增加了显示网站备案号功能和百度统计
 
 
 
@@ -35,36 +35,36 @@
 
 #### 1. 安装hexo-themes-Shier 主体
 
-
 ``` shell
 git clone git@github.com:wt812/hexo-theme-Shier.git
 
-或者直接下载主题zip包解压至主题目录下，重命名为Shier
 ```
+或者直接下载主题zip包解压至主题目录下，重命名为Shier
+
 
 #### 2. 安装依赖 hexo-generator-searchdb：
 
 ``` shell
 $ npm install hexo-generator-searchdb --save
 
-在站点的根目录下执行以下命令
 ```
+在站点的根目录下执行以下命令
 
 
 ## 配置
 
 
-#### 修改Hexo目录下的_config.yml 的 **theme** 为 **hexo-themes-shier**
+#### 1. 修改Hexo目录下的_config.yml 的 **theme** 为 **Shier**
 
-#### 语言配置
+#### 2. 语言配置
 
 ```shell
 请在hexo文件下的"_config.yml"
 
-修改 **language** 为 **en** 或者 **zh-Hans**， 目前只支持这两种语言
 ```
+修改 **language** 为 **en** 或者 **zh-Hans**， 目前只支持这两种语言
 
-#### 修改配置
+#### 3. 修改配置
 
 ```shell
 # 当前版本 | Theme Version
@@ -130,12 +130,9 @@ highlight:
   enable: true
 ```
 
-### 4. 404 页面配置：
+#### 4. 404 页面配置：
 
-
-
-
-### 在hexo跟目录的Source文件夹下创建一个404.md，并写入如下内容:
+在hexo跟目录的Source文件夹下创建一个404.md，并写入如下内容:
 
 ``` markdown
 ---
@@ -146,9 +143,8 @@ layout: "404"
 ```
 > 如果你对这个项目感兴趣也可以一起合作🤝
 
----
 
-### 如果喜欢请送上一个star✨～
+#### 如果喜欢请送上一个star✨～
 
-### 如果你对我的研究感兴趣期待你的follow👬～🌈
+#### 如果你对我的研究感兴趣期待你的follow👬～🌈
 
