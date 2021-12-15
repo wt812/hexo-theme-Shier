@@ -30,29 +30,36 @@
 
 # 使用
 
-### 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：
 
-``` shell
-$ npm install hexo-generator-searchdb --save
-```
+## 安装
 
+#### 1. 安装hexo-themes-Shier 主体
 
-### 1. 下载hexo-themes-Shier
-
-+ **最新版**：进入 /Hexo目录/themes：
 
 ``` shell
 git clone git@github.com:wt812/hexo-theme-Shier.git
+或者直接下载主题zip包解压至主题目录下，重命名为Shier
 ```
 
-### 2. 修改Hexo目录下的_config.yml 的 **theme** 为 **hexo-themes-shier**
+#### 2. 安装依赖 hexo-generator-searchdb：
 
-### 3. 语言配置
+``` shell
+$ npm install hexo-generator-searchdb --save
+在站点的根目录下执行以下命令
+```
+
+
+## 配置
+
+
+### 1. 修改Hexo目录下的_config.yml 的 **theme** 为 **hexo-themes-shier**
+
+### 2. 语言配置
 
 请在hexo文件下的"_config.yml"修改 **language** 为 **en** 或者 **zh-Hans**， 目前只支持这两种语言
 
 
-### 4. 修改配置
+### 3. 修改配置
 
 ````yaml
 # 当前版本 | Theme Version
@@ -95,9 +102,6 @@ menu:
   2012至今: /
   Markdown: /Markdown
 
-  
-
-
 # 站内关键词搜索 | Local Search
 search:
  enable: true
@@ -117,14 +121,16 @@ valine:
 counter:
   enable: true
 
-
 highlight:
   enable: true
 ````
 
-### 5. 404 页面配置：
+### 4. 404 页面配置：
 
-#### 在hexo跟目录的Source文件夹下创建一个404.md，并写入如下内容:
+
+
+
+### 在hexo跟目录的Source文件夹下创建一个404.md，并写入如下内容:
 
 ``` markdown
 ---
