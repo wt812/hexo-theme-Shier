@@ -15,20 +15,17 @@
 
 # 改进
 
-+ 主题改名为Shier
-+ 增加了文章概要的选项
-+ 增加了英语支持
-+ 增加了可选的搜索框
-+ 增加了可选的标签页和标签云
-+ 增加了可选的toc支持和深度调整
++ 支持概要多图展示
++ 支持仅标题展示
++ 支持概要图文展示
++ 支持搜索
++ 支持黑白style
++ 支持文章密码查看
 + 优化了css文件，优化了主题的颜色等，将部分css改为stylus方便编译
 + 调整了部分选项的可选性
 + 增加了nav menu的编辑支持
 + 增加了文章底部的copyright栏
 + 优化了部分代码
-+ 支持黑白style
-+ 支持文章密码查看
-+ 支持概况多图展示
 + 兼容移动端浏览器预览
 
 
@@ -36,7 +33,7 @@
 
 ## 安装
 
-#### 1. 安装hexo-themes-Shier 主体
+#### 1. 安装hexo-themes-Shier主题
 
 ``` shell
 git clone git@github.com:wt812/hexo-theme-Shier.git
@@ -45,10 +42,24 @@ git clone git@github.com:wt812/hexo-theme-Shier.git
 或者直接下载主题zip包解压至主题目录下，重命名为Shier
 
 
-#### 2. 安装依赖 hexo-generator-searchdb：
+#### 2. search依赖 hexo-generator-searchdb
 
 ``` shell
 $ npm install hexo-generator-searchdb --save
+
+```
+
+
+#### 3. 文章加密依赖 hexo-blog-encrypt
+```shell
+$ npm install --save hexo-blog-encrypt
+
+```
+
+
+#### 4. 图片懒加载依赖 Hexo-lazyload-image
+```shell
+$ npm install hexo-lazyload-image --save
 
 ```
 在站点的根目录下执行以下命令
@@ -57,7 +68,7 @@ $ npm install hexo-generator-searchdb --save
 ## 配置
 
 
-#### 1. 修改Hexo目录下的_config.yml 的 **theme** 为 **Shier**
+#### 1. 修改Hexo目录下的_config.yml的theme修改为 **Shier**
 
 #### 2. 语言配置
 
@@ -65,7 +76,7 @@ $ npm install hexo-generator-searchdb --save
 请在hexo文件下的"_config.yml"
 
 ```
-修改 **language** 为 **en** 或者 **zh-Hans**， 目前只支持这两种语言
+修改 **language** 为 `en` 或者 `zh-Hans`， 目前只支持这两种语言
 
 #### 3. 修改配置
 
