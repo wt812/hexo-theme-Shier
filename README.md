@@ -3,8 +3,6 @@
 [Demo](http://zaole.net "Notebook")
 
 
-![](https://cdn.jsdelivr.net/gh/wt812/blogimg/123.jpg)
-
 # 主体
 
 简约、美观、实用<Br>

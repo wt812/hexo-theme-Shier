@@ -191,7 +191,7 @@ i#local-search-close
         // display block
         font-size 1em 
         color #aaa
-        padding 0 0 20px 0
+        padding 0 0 10px 0
         span.left
             float left
             overflow hidden
@@ -218,20 +218,21 @@ i#local-search-close
                 font-style:normal
                 font-weight 300
                 color #777
+                line-height 21px
             img
                 height 220px
                 margin 15px 0 0 0   
             a
                 color #333
                 display block
-                text-decoration underline
+                text-decoration none
                 font-weight 900
                 font-size 24px
                 width 86%
                 
                 
             a:hover
-                text-decoration none 
+                text-decoration underline 
 
 .footer
      width 100%
@@ -247,7 +248,7 @@ i#local-search-close
     p
         font-size 1em
         color #444
-        line-height 1.2em
+        line-height 25px
         
     div
         color #222
@@ -275,6 +276,9 @@ i#local-search-close
 // style 2
 .bg_while
     background: #000
+    blockquote
+        background #111
+        border-left 8px #333 solid
     .hbe-button
         border 1px #444 solid
         color #666
@@ -353,6 +357,9 @@ figure.highlight
     border-radius 5px
     
 @media screen and (max-width: 600px) {
+    .imgcenter{
+        margin 0 5px 0 0
+    }
     .imgcenter:last-of-type{
         margin 0
     }   
@@ -426,7 +433,7 @@ figure.highlight
                 }
                 img{
                     width 96px
-                    height 120px
+                    height 70px
                     // width auto
                     // height auto
                     display block

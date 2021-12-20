@@ -90,7 +90,7 @@ var searchFunc = function (path, search_id, content_id) {
                     }
                 });
                 if (str.indexOf('<li>') === -1) {
-                    return $resultContent.innerHTML = BTN + "<ul><span class='local-search-empty'>We didn't find any results for the search, please try other keywords.<span></ul>";
+                    return $resultContent.innerHTML = BTN + "<ul><span class='local-search-empty'>没有找到相关内容<span></ul>";
                 }
                 $resultContent.innerHTML = BTN + str;
             });
