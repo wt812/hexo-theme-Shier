@@ -67,17 +67,20 @@ code{
     border-radius: 3px;
     color red
 }
-.nav div a::before {  
+.nav div a::before,
+ul.archive-list li a::before {  
   transform: scaleX(0);
   transform-origin: bottom right;
 }
 
-.nav div a:hover::before {
+.nav div a:hover::before,
+ul.archive-list li a:hover::before  {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.nav div a::before {
+.nav div a::before,
+ul.archive-list li a::before {
   content: " ";
   display: block;
   position: absolute;
@@ -90,7 +93,8 @@ code{
   transition: transform .3s ease;
 }
 
-.nav div a{
+.nav div a,
+ul.archive-list li a{
   position: relative;
 }
 

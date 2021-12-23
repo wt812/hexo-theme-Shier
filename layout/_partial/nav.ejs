@@ -44,6 +44,8 @@
     <% for (name in theme.menu) { %>
     <div><a href="<%- url_for(theme.menu[name]) %>" ><%= name %></a></div>
     <% } %>
+    
+    <%- list_archives({show_count: theme.show_count, type: theme.archive_type}) %>
 
     <div class="search-right">
       <input placeholder="搜索" id="local-search-input"/>  

@@ -35,11 +35,12 @@ favicon: /img/favicon.ico
 
 # 菜单栏配置 | Nav Bar Settings
 menu:
-  2012至今: /
-  Markdown: /Markdown
-
+  至今: /
   
-
+# menu
+archive_type: 'yearly'
+tag_type: 'monthly'
+show_count: false
 
 # 站内关键词搜索 | Local Search
 search:
@@ -53,8 +54,8 @@ search:
 ## 若关闭valine 设置enable为false
 valine:
   enable: true
-  appId: 
-  appKey:
+  appId: NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz
+  appKey: z1FihjWEbS8uIfUQdmCtK7zz
 
 # visitors count
 counter:

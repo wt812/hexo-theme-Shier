@@ -63,6 +63,7 @@ body
     max-width 800px
     min-width 46%
     padding-left 150px
+    
 
 .abc_logo
     width 100%
@@ -111,12 +112,30 @@ nav.page-nav
         color #999 
     .current
         color #222
+ul.archive-list
+    float left
+    list-style none
+    padding-top 0
+    padding-bottom 0
+    margin-top 0
+    margin-bottom 0    
+    li
+        float left
+        padding-right 30px
+        font-size 1.2em
+        a
+            color #444
+            text-decoration none
+            font-size 1.2em
+            // font-weight 100
+        a:hover
+            text-decoration none 
 .nav
     width 100%
     padding 70px 0 0 0
     display inline-block
     list-style none
-    line-height 30px     
+    line-height 30px   
     div
         float left
         font-size 1em
@@ -357,6 +376,16 @@ figure.highlight
     border-radius 5px
     
 @media screen and (max-width: 600px) {
+    ul.archive-list{
+        padding 0
+        width 100%
+        li{
+            width 100%
+            text-align right
+            padding 0
+            font-size 1.2em
+        }
+    }
     .imgcenter{
         margin 0 5px 0 0
     }

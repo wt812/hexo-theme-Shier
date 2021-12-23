@@ -1,7 +1,12 @@
 
 <style>
+    .abc{
+        display: none;
+    }
     .footer{
         text-align: center;
+        position: fixed;
+        bottom: 0;
     }
     #bodyx{
         max-width: 100% !important;
@@ -11,6 +16,8 @@
     body {
       margin: 0;
       font-size: 20px;
+      font-family: DINAlternate-bold, Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑","Microsoft JhengHei",STXihei, "华文细黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+
   }
 
   * {
@@ -22,9 +29,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: calc(100vh - 90px);
+      height: 100vh;
       background: white;
-      color: black;
+      color: #d5d5d5;
       font-family: arial, sans-serif;
       overflow: hidden;
   }
@@ -80,12 +87,17 @@
     animation: 38s floatReverse2 infinite;
 }
 .particle:nth-child(2) {
-    top: 63.6911942099%;
-    left: 52.4781341108%;
-    font-size: 29px;
-    font-size: 1.81em;
-    filter: blur(1.04px);
-    animation: 27s floatReverse infinite;
+    color: #000;
+    filter: blur(.3px);
+    animation: 17s floatReverse2 infinite;
+    position: relative;
+    z-index: 999;
+    margin: 5px;
+    font-size: 3.81em;
+    color: #000;
+    text-align: center;
+    font-weight: 900;
+
 }
 .particle:nth-child(3) {
     top: 91.3730255164%;
@@ -758,16 +770,14 @@ to {
         padding: 0;
         wudth: 100% !important;
     }
-    .abc{
-        display: none;
-    }
+
 }
 </style>
 </head>
 <body>
     <main class='container'>
       <span class='particle'>4</span>
-      <span class='particle'>4</span>
+      <span class='particle'>404</span>
       <span class='particle'>4</span>
       <span class='particle'>4</span>
       <span class='particle'>4</span>
