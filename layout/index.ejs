@@ -29,14 +29,14 @@
 
         <% if (post.excerpt && post.excerpt.length && post.photos && post.photos.length) { %> 
         <!-- 不加more或加more 加photos图 -->
-            <i><%= strip_html(post.excerpt)%></i>
+            <i><%- post.excerpt %></i>
             <% post.photos.forEach(function(photo, i){ var photoInfo = post.photoInfos && post.photoInfos[i]; %>
                 <div class="imgcenter">
                     <img class="initImg" src="<%- url_for(photo) %>" alt="">
                 </div>
             <% }) %>
         <% } else if( post.excerpt && post.excerpt.length){ %>
-            <i><%= strip_html(post.excerpt) %></i>
+            <i><%- post.excerpt %></i>
         <% } else if( post.photos && post.photos.length){ %>
             <% post.photos.forEach(function(photo, i){ var photoInfo = post.photoInfos && post.photoInfos[i]; %>
                 <div class="imgcenter">
@@ -44,6 +44,7 @@
                 </div>
             <% }) %>
         <% } %>
+
 
         <!-- tags 
         <% if (post.tags && post.tags.length){ %>
