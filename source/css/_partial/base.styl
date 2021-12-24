@@ -33,6 +33,7 @@ h6
     font-weight 300
 h1,h2,h3,h4,h5,h6
     margin 5px
+    
     font-family "Iowan Old Style", "Ovo", "Hoefler Text", Georgia, "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular", "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback", "WenQuanYi Micro Hei", sans-serif
 table,th,td
     border-collapse collapse
@@ -45,9 +46,11 @@ table,th,td
     color #666
 blockquote
     border-left 8px #ddd solid
-    margin 10px 10px 10px 0
+    margin 10px 0px 10px 0
     padding 3px
     background #f1f1f1
+    border-top-right-radius 3px
+    border-bottom-right-radius 3px
     p
         padding-left 12px
 
@@ -55,17 +58,18 @@ img
     max-width 100% 
     min-width auto 
     border-radius 3px   
-    display block   
-
+    display block
+    
 .pre{
     border-radius:5px
 }
 code{
 
-    background: #ffd8d8;
-    padding: 2px;
-    border-radius: 3px;
-    color red
+    background #617BFFFF
+    padding 4px
+    border-radius 3px
+    color #fff
+    margin 0 1em
 }
 .nav div a::before,
 ul.archive-list li a::before {  
@@ -85,10 +89,10 @@ ul.archive-list li a::before {
   display: block;
   position: absolute;
   height 10px;
-  margin-top: 12px;
+  margin-top: 15px;
   top: 0px; right: 0; bottom: 0; left: 0;
   inset: 0 0 0 0;
-  background: rgba(241 105 37,.2);
+  background: rgba(241 105 37,.8);
   z-index: -1;
   transition: transform .3s ease;
 }

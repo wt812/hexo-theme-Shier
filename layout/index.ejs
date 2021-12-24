@@ -8,26 +8,23 @@
             <% var year = post.date.year(); %>
             <% if (last != year){ %>
                 <!-- 年份 -->
-                <h2 class="masked"><%= year %></h2>
+                <h2 class="masked p_left"><%= year %></h2>
                 <% last = year; %>
             <% } %>
     <div>
         <span class="left">
             <%- full_date(post.date, 'MM-DD') %>
         </span>
-        <span class="right">
-            <a href="<%- post.link ? post.link : url_for(post.path) %>"><%= post.title ? post.title : "无题" %></a>
+        <span class="right m_left">
+            <!-- <a href="<%- post.link ? post.link : url_for(post.path) %>"><%= post.linktitle ? post.linktitle : post.title %></a> -->
 
-        <!-- <a href="<%- url_for(post.path) %>"><%= post.title %></a> -->
-        <!-- 
-        <% if (post.excerpt && post.excerpt.length) { %> 
-            <i><%= strip_html(post.excerpt) %></i>
-        <% } else if( post.photos && post.photos.length){ %>
-            <img src="<%- post.photos%>" alt="">
-        <% } else { %>
-            <i><%= truncate(strip_html(post.content), { length: 100 }) %></i>
-        <% } %>
-         -->
+        <%  if (post.linktitle && post.linktitle.length) { %> 
+            <font><a href="<%- url_for(post.link) %>"><%= post.linktitle %></a></font>
+        <% } else if (post.title && post.title.length) { %> 
+            <font><a href="<%- url_for(post.path) %>"><%= post.title %></a></font>
+        <% } else if (post.notcontent && post.notcontent.length) { %> 
+            <font><%= post.notcontent %></font>
+        <% }  %>
 
         <% if (post.excerpt && post.excerpt.length && post.photos && post.photos.length) { %> 
         <!-- 不加more或加more 加photos图 -->
@@ -45,8 +42,9 @@
                     <img class="initImg" src="<%- url_for(photo) %>" alt="">
                 </div>
             <% }) %>
+        <% } else if( post.link && post.link.length){ %>
+                <i>当前会跳转到 <%- post.link %></i>
         <% } %>
-
 
         <!-- tags 
         <% if (post.tags && post.tags.length){ %>
@@ -56,6 +54,7 @@
           }) %>
         <% } %>
         -->
+
         </span>
     </div>         
     <% }) %>
