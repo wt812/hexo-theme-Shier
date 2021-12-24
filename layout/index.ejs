@@ -16,7 +16,9 @@
             <%- full_date(post.date, 'MM-DD') %>
         </span>
         <span class="right">
-        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <a href="<%- post.link ? post.link : url_for(post.path) %>"><%= post.title ? post.title : "无题" %></a>
+
+        <!-- <a href="<%- url_for(post.path) %>"><%= post.title %></a> -->
         <!-- 
         <% if (post.excerpt && post.excerpt.length) { %> 
             <i><%= strip_html(post.excerpt) %></i>
