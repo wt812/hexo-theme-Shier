@@ -21,18 +21,41 @@
 
 <!-- 评论 -->
 
+
+
+
+
 <!-- 上一篇 下一篇 -->
 <div class="prev_next">
- <% if (page.prev){ %>
-    <a href="<%- url_for(page.prev.path) %>">
-    上一篇&nbsp;&nbsp;<%= page.prev.title %>
-    </a>
- <% } %>
+
+ <% if (page.prev) { %>         
+     <% if (page.prev.linktitle) { %>
+        <a href="<%- url_for( page.prev.link) %>">
+        上一篇&nbsp;&nbsp;<%= page.prev.linktitle %>
+        </a>
+     <% } else if(page.prev.title){ %>
+        <a href="<%- url_for( page.prev.path) %>">
+        上一篇&nbsp;&nbsp;<%= page.prev.title %>
+        </a>
+     <% } else if(page.prev.notcontent){ %>
+        上一篇&nbsp;&nbsp;<%= page.prev.notcontent %> 无详细内容
+     <% } %>
+
+<% }%>
 
 <% if (page.next){ %>
-    <a href="<%- url_for(page.next.path) %>">
-    下一篇&nbsp;&nbsp;<%= page.next.title %>
-    </a>
+    <% if (page.next.linktitle) { %>
+        <a href="<%- url_for( page.next.link) %>">
+        下一篇&nbsp;&nbsp;<%= page.next.linktitle %>
+        </a>
+     <% } else if(page.next.title){ %>
+        <a href="<%- url_for( page.next.path) %>">
+        下一篇&nbsp;&nbsp;<%= page.next.title %>
+        </a>
+     <% } else if(page.next.notcontent){ %>
+        下一篇&nbsp;&nbsp;<%= page.next.notcontent %> 无详细内容
+     <% } %>
+
 <% } %>
 </div>
 
