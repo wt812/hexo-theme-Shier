@@ -1,62 +1,79 @@
-<%- partial('_partial/logo') %>
 <%- partial('_partial/nav') %>
-
 <!-- list -->
-<div class="list">
+<div class="_list">
     <% var last; %>
         <% page.posts.each(function (post) { %>
             <% var year = post.date.year(); %>
             <% if (last != year){ %>
                 <!-- 年份 -->
-                <h2 class="masked p_left"><%= year %></h2>
+                <div class="_list_year"><%= year %></div>
                 <% last = year; %>
-            <% } %>
-    <div>
-        <span class="left">
-            <%- full_date(post.date, 'MM-DD') %>
-        </span>
-        <span class="right m_left">
-            <!-- <a href="<%- post.link ? post.link : url_for(post.path) %>"><%= post.linktitle ? post.linktitle : post.title %></a> -->
+            <% } 
+        %>
+    <div class="_list_item">
+        <div class="_list_item_title">
+            <%  if (post.linktitle && post.linktitle.length) { %> 
+            <a href="<%- url_for(post.link) %>"><%= post.linktitle %></a>
+            <% } else if (post.title && post.title.length) { %> 
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <% } else if (post.notcontent && post.notcontent.length) { %> 
+            <%= post.notcontent %>
+            <% }  %>
+        </div>
 
-        <%  if (post.linktitle && post.linktitle.length) { %> 
-            <font><a href="<%- url_for(post.link) %>"><%= post.linktitle %></a></font>
-        <% } else if (post.title && post.title.length) { %> 
-            <font><a href="<%- url_for(post.path) %>"><%= post.title %></a></font>
-        <% } else if (post.notcontent && post.notcontent.length) { %> 
-            <font><%= post.notcontent %></font>
-        <% }  %>
 
+
+        
+        <!-- item 内容 -->
         <% if (post.excerpt && post.excerpt.length && post.photos && post.photos.length) { %> 
-        <!-- 不加more或加more 加photos图 -->
-            <i><%- post.excerpt %></i>
+        <!-- 1 -->
+        <div class="_list_item_con">
+            <p><%- post.excerpt %></p>
+            <div class="ekrt">
             <% post.photos.forEach(function(photo, i){ var photoInfo = post.photoInfos && post.photoInfos[i]; %>
-                <div class="imgcenter">
-                    <img class="initImg" src="<%- url_for(photo) %>" alt="">
-                </div>
+                
+                    <div class="imgcenter">
+                        <img class="initImg" src="<%- url_for(photo) %>" alt="">
+                    </div>
+
             <% }) %>
+            </div>
+        </div>    
         <% } else if( post.excerpt && post.excerpt.length){ %>
-            <i><%- post.excerpt %></i>
+        <!-- 2 -->
+        <div class="_list_item_con">
+            <%- post.excerpt %>
+        </div>     
         <% } else if( post.photos && post.photos.length){ %>
+        <!-- 3 -->
+        <div class="_list_item_con">
+            <div class="ekrt">
             <% post.photos.forEach(function(photo, i){ var photoInfo = post.photoInfos && post.photoInfos[i]; %>
                 <div class="imgcenter">
                     <img class="initImg" src="<%- url_for(photo) %>" alt="">
                 </div>
             <% }) %>
+            </div>
+        </div>     
         <% } else if( post.link && post.link.length){ %>
-                <i>当前会跳转到 <%- post.link %></i>
+        <!-- 4 -->
+        <div class="_list_item_con">
+            <p>当前会跳转到<%- post.link %></p>
+        </div>     
         <% } %>
 
-        <!-- tags 
+
+        <!-- 时间 -->
+        <div class="_list_item_time">
+            <%- full_date(post.date, "YYYY-MM-DD h:mm:ss a") %>
+        </div>
+
+        <!-- tag 
         <% if (post.tags && post.tags.length){ %>
-          <%- list_tags(post.tags, {
-            show_count: false,
-            class: 'post-tag'
-          }) %>
+          <%= post.tags %>
         <% } %>
         -->
-
-        </span>
-    </div>         
+    </div>   
     <% }) %>
 </div>
 

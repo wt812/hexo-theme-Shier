@@ -1,5 +1,4 @@
 <!--nav-->
-<div style="position:relative">
 <span class="logo">
 <svg style="enable-background:new 0 0 173.01 106.17;" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 173 106">
 <style type="text/css">
@@ -39,7 +38,7 @@
 </g>
 </svg>
 </span>
-
+ 
 <div class="nav">  
     <% for (name in theme.menu) { %>
     <div><a href="<%- url_for(theme.menu[name]) %>" ><%= name %></a></div>
@@ -51,7 +50,7 @@
       <input placeholder="搜索" id="local-search-input"/>  
     </div>
 </div>
-</div>
+
 <div id="local-search-result"></div>
 <!-- <%- js('libs/jquery.min.js') %> -->
 <%- js('js/search.js') %>

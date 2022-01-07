@@ -6,6 +6,9 @@ body
     font-size: 100%
     font: inherit
     vertical-align: baseline
+ul,li
+    padding 0
+    margin 0    
     
 hr
     display: block; 
@@ -13,28 +16,12 @@ hr
     *color:#f60;/* for ie6 ie7 */
     background-color:#eee; 
     border:none; 
-h1
-    font-size 35px
-    font-weight 900
-h2
-    font-size 30px
-    font-weight 900
-h3
-    font-size 25px
-    font-weight 900
-h4
-    font-size 20px
-    font-weight 700 
-h5 
-    font-size 15px
-    font-weight 500
-h6 
-    font-size 12px
-    font-weight 300
+
 h1,h2,h3,h4,h5,h6
     margin 5px
-    
-    font-family "Iowan Old Style", "Ovo", "Hoefler Text", Georgia, "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular", "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback", "WenQuanYi Micro Hei", sans-serif
+    font-family: DINAlternate-bold, Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑","Microsoft JhengHei",STXihei, "华文细黑", SimSun, "宋体", Heiti, "黑体", sans-serif;    
+    // font-family "Iowan Old Style", "Ovo", "Hoefler Text", Georgia, "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular", "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback", "WenQuanYi Micro Hei", sans-serif
+    // font-family: "Times New Roman", Times, serif;
 table,th,td
     border-collapse collapse
     border-spacing 0
@@ -48,7 +35,7 @@ blockquote
     border-left 8px #ddd solid
     margin 10px 0px 10px 0
     padding 3px
-    background #f1f1f1
+    background #F7F8F8
     border-top-right-radius 3px
     border-bottom-right-radius 3px
     p
@@ -59,52 +46,44 @@ img
     min-width auto 
     border-radius 3px   
     display block
-    
+      
 .pre{
     border-radius:5px
 }
 code{
 
-    background #617BFFFF
+    background rgba(241 105 37,.1)
     padding 4px
     border-radius 3px
-    color #fff
-    margin 0 1em
+    color rgba(241 105 37,1)
+    margin 0 3px
 }
-.nav div a::before,
 ul.archive-list li a::before {  
   transform: scaleX(0);
   transform-origin: bottom right;
 }
 
-.nav div a:hover::before,
 ul.archive-list li a:hover::before  {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.nav div a::before,
 ul.archive-list li a::before {
   content: " ";
   display: block;
   position: absolute;
   height 10px;
-  margin-top: 15px;
+  margin-top: 20px;
   top: 0px; right: 0; bottom: 0; left: 0;
   inset: 0 0 0 0;
-  background: rgba(241 105 37,.8);
+  background: rgba(241 105 37,.3);
   z-index: -1;
   transition: transform .3s ease;
 }
 
-.nav div a,
-ul.archive-list li a{
-  position: relative;
-}
 
-ul li a{
-    color:#7B87FFFF
-}
+
+
     
 ::selection {
 background: #F16925;
@@ -125,17 +104,18 @@ color: #fff;
 background: #F16925;
 color: #fff;
 }
-@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
-    .masked{
-        background-image: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        -webkit-background-size: 200% 100%;
-        -webkit-animation: masked-animation 4s infinite linear;
-    }
-}
-@-webkit-keyframes masked-animation {
-    0%  { background-position: 0 0;}
-    100% { background-position: -100% 0;}
-}
+// @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+//     .masked{
+//         background: red;
+//         background-image: -webkit-linear-gradient(left, rgba(241 105 37,1), #FFEB00FF 25%, rgba(241 105 37,1) 50%, #FFEB00FF 75%, rgba(241 105 37,1));
+//         -webkit-text-fill-color: transparent;
+//         -webkit-background-clip: text;
+//         -webkit-background-size: 200% 100%;
+//         -webkit-animation: masked-animation 4s infinite linear;
+//     }
+// }
+// @-webkit-keyframes masked-animation {
+//     0%  { background-position: 0 0;}
+//     100% { background-position: -100% 0;}
+// }
 

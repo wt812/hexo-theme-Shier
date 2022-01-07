@@ -1,108 +1,219 @@
 @import "_partial/index"
 @import "_partial/base"
-// @import "_partial/post"
 @import "_partial/markdown"
 @import "_partial/vcomments"
-.m_left
-    margin-left 44px !important
-.p_left
-    padding-left 44px !important    
-.v
-    padding-left 44px
+@import "_partial/newstyle"
+
+$black = black
+$white = white
+$color1 = #111
+$color2 = #222
+$color9 = #999
+$color_grey = rgba(0,0,0,.1)
+$colorF78 = #F7F8F8
+$color_red = #FF513EFF
+$13 = 12px
+$100 = 100%
+$44 = 44px
+$liubai = 249px
+$box-width = 800px
+$fm1 = DINAlternate-bold, Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑","Microsoft JhengHei",STXihei, "华文细黑", SimSun, "宋体", Heiti, "黑体", sans-serif   
+
+m_yuliu(a,b,c)
+    width a
+    padding b c
+
+body
+    list-style-type none
+    font-family $fm1
+a
+    color $color2
+    text-decoration none
+a:hover
+    color $color_red
+// a:hover::after
+//     content "➜"
+//     color rgba(241 105 37,1)
+//     padding-left 12px
+//     font-size 12px
+//     overflow hidden
+//     white-space nowrap
+//     display inline-block
+//     vertical-align bottom     
+    
+._list
+    &_year
+        font-size 36px
+        padding 30px 0 30px $liubai
+        color $color_grey
+    &_item     
+        padding 30px 0 30px $liubai
+        &:hover
+            background #F7F8F8 
+        &_title
+            width $100
+            font-size 30px
+            margin-bottom 10px
+            color $color2
+        &_con
+            width $100
+            p
+                display block
+                color #555
+                margin 0 0 10px 0
+                font-size 14px
+            img
+                height 300px
+                object-fit cover
+        &_time   
+            width @width
+            margin-top 50px
+            color #ddd
+            font-size 13px
+
+        
+                  
+.imgcenter
+    display inline-block
+    margin-right 5px
+    &:last-of-type
+        margin 0
+.prev
+    padding-right 10px
+    
+nav.page-nav
+    margin 2em 0
+    padding-left $liubai
+    .current
+        color $color_red
+
+.page-number
+    margin 0 10px 0 0     
+ // top       
 .logo
-    width 100%
-    position absolute 
-    z-index -1
+    position fixed
+    z-index 1
     float left
-    left -240px
-    top 20px
-    padding 10px 0 0 0 
+    left -50px
+    top 60px
     svg
-        float right 
         float left
         width 220px
+.nav
+    display inline-block
+    padding 70px 0 70px  $liubai
+    width calc($100 - $liubai)
+    width $box-width
+    
+.search-right
+    float right
+    // width 30%
+    input
+        border 1px $color_grey solid
+        background none
+        padding 0 12px
+        border-radius 3px
+        height 28px
+        line-height @height
+        text-align center
+        position relative
+        top 0px
+    
+ul.archive-list
+    position relative
+    z-index 2
+    float left
+    width calc($100 - 50%)
+    list-style none
+    margin 0
+    padding 0
 
-.abc
+    li
+        width auto
+        float left
+        font-size 28px
+        height 32px
+        line-height @height
+        padding-right 20px
+        a
+            position relative
+
+//footer
+.footer
+     margin 2em 0
+     font-size 14px
+     padding-left $liubai
+     span
+         line-height 2.2em    
+
+#local-search-result
+    position relative
+    padding-left $liubai
+    i
+        position absolute 
+ul.search-result-list
+    margin-left 20px
+
+// 右下角
+.lower_right
     position fixed
     right 15px
-    bottom 15px
+    bottom @right
+    font-size $13
     a
-        color #111 !important
+        color $color1
+.goTop 
+    margin-bottom 15px
+    display block
+    text-decoration none        
 
-.te
-    position absolute
-    top -5px
-    left -100px
-    font-size 25px
-    color #666
-    transform rotate(180deg) scale(1, 1) skew(0deg, 0deg) translate(0, 0)   
-.xf
+.style_
     box-shadow 0px 0px 100px rgba(0, 0, 0, .15)
     width 50px
-    height 50px
+    height @width
     text-align center
-    line-height 50px
+    line-height @width
     border-radius 4px
     background rgba(255,255,255,.8)
     border 1px #f5f5f5 solid
     cursor pointer
     font-style normal
 
-ul.post-tag-list
-    list-style-type none
-    width calc(100% - 44px)
-    padding 0 0 0 44px
-    margin 0
-    display inline-block
-    li
-        padding 1px 8px
-        border 1px #fff solid
-        background #fff
-        line-height 22px
-        border-radius 3px
-        width auto
-        float left
-        margin-right 10px
-        font-size 13px
-        a
-            color #777
-            text-decoration none            
-body
-    list-style-type none
-    // background #444
-    // background #eff0f6
-    // color #222
-    // font-family 'Noto Serif', 'Times New Roman', serif
-    // font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
-    font-family: DINAlternate-bold, Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑","Microsoft JhengHei",STXihei, "华文细黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
-
-       
- #bodyx
-    max-width 850px
-    min-width 46%
-    padding-left 150px
-    padding-left 200px
-    
-
-.abc_logo
-    width 100%
-    height 60px
-         
-.goTop 
-    margin-bottom 15px
-    display block
-    color #000
-    text-decoration none
-    a
-        color #000
+// detail
+._detail
+    padding 30px 0 30px $liubai
+    width $box-width
+    &_title
+        font-size 30px
+    &_time
+        font-size 12px
+        color #999 
+    &_cont
+        font-size 16px
+        padding 60px 0
+        ul
+            margin 0
+            padding 0 0 0 17px
+            li
+                line-height 2em
+                font-size 16px
+        p
+            font-size 15px
+            line-height 23px
+            margin 2em 0
+            img
+                margin-bottom 1em          
+    &_tags
+        font-size 12px           
+blockquote
+    p
+        padding 10px !important
+        margin 0 !important
 .prev_next
-    display block
-    width calc(100% - 44px)
-    padding 1.5em 0 1.5em 44px
-    font-size 13px
+    padding 1.5em 0 1.5em 249px
+    font-size $13
     a
-        color #222
+        color $color2
         display block  
         text-decoration none
         line-height 21px
@@ -112,280 +223,124 @@ body
         display -webkit-box
         -webkit-line-clamp 1
         -webkit-box-orient vertical
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+// other
+.v
+    padding 0 0 0 $liubai
+    width $box-width
+.v .vwrap .vheader .vinput
+    display none !important
+.v .vwrap .vedit,.v .vinput
+    padding 0 !important        
 .st0
-    display inherit
-    
-.search-right
-    float right !important
-    padding 0 120px 0 0
-    padding 0
-.logo
-    // font-size 5em
-    // margin-left -15px
-nav.page-nav
-    margin 2em 0
-    span
-        width 100px  
-       
-    a,.current
-        padding 0 10px 0 0
-        text-decoration none
-        color #999 
-    .current
-        color #222
-ul.archive-list
-    float left
-    list-style none
-    padding-top 0
-    padding-bottom 0
-    margin-top 0
-    margin-bottom 0 
-    padding-left 44px   
-    li
-        float left
-        padding-right 30px
-        font-size 1.2em
-        a
-            color #444
-            text-decoration none
-            font-size 1.2em
-            // font-weight 100
-        a:hover
-            text-decoration none 
-.nav
-    width 100%
-    padding 50px 0 0 0
-    display inline-block
-    list-style none
-    line-height 30px   
-    div
-        float left
-        font-size 1em
-        input
-            border 2px #025FCC solid
-            // border none
-            // border-bottom 5px #99DDFF solid
-            // border-radius 3px
-            background none
-            padding 0 12px
-            height 30px
-            line-height 30px
-            text-align center
-            width calc(100% - 28px)
-            
-        a
-            color #444
-            text-decoration none
-            font-size 1.2em
-            font-weight 100
-        a:hover
-            text-decoration none 
-    div:nth-child(2)
-        margin-left 30px        
-
-#local-search-result
-    position relative
-    i
-        position absolute
-
-ul.search-result-list
-    list-style decimal-leading-zero
-    li
-        a
-          color red              
+    display inherit         
 i#local-search-close
-        display: none;
-.imgcenter
-    display inline-block
-    text-align center 
-    margin-right 10px
-    padding 0 !important
-.imgcenter:last-of-type
-    margin 0
-    
-.initImg
-    width auto
-    height auto
-    object-fit cover            
-.list
-    width 100%
-    display inline-block
-    height auto
-    margin 2em 0 0 0
-    // font-weight 900
-    // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    
-    h2
-        color #fff
-        font-size 2em
-        // border-bottom .5px #ddd dashed
-        margin 1em 0 0 0
-        padding-bottom .5em
-        padding 0 0 10px 34px
-        font-weight 900
-        // font-weight 900
-        // font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        // -webkit-text-stroke .6px #999
-        font-family DINAlternate-bold, Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑","Microsoft JhengHei",STXihei, "华文细黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
-
-    
-    div 
-        // display block
-        font-size 1em 
-        color #aaa
-        padding 0 0 1em 0
-        span.left
-            float left
-            overflow hidden
-            color #AAA
-            display block
-            font-size 12px
-            font-weight 300
-            color #777
-            line-height 24px
-                
-                
-        span.right 
-            display block  
-            // background blue
-            i
-                font-size 15px
-                // padding 0 12px
-                margin 1em 0 0 0
-                display block 
-                // font-weight 300
-                // border-left 5px #aaa solid
-                // font-style italic
-                font-style:normal
-                font-weight 300
-                color #777
-                line-height 21px
-                p
-                    margin 0
-            img
-                height 230px
-                margin 1em 0 0 0   
-            font
-                font-weight 900
-                font-size 24px 
-                color #333    
-                a
-                    text-decoration none
-                    color #333
-                    display block
-                    width 100%
-                    // padding: 0.1rem 1px 0;
-                a:hover
-                    text-decoration underline
-
-.footer
-     width 100%
-     display block
-     margin 2em 0
-     font-size 14px
-     span
-         line-height 2.2em
-         
-.cont
-    margin 4em 0 5em 0
-    line-height 1.6em
-    padding-left 44px
-    ul
-        margin 0
-        padding 0 0 0 17px
-    p
-        font-size 1em
-        color #444
-        line-height 25px
-        img
-            margin-bottom 1em
-            position relative
-        img::before
-            content:  "1111";
-            width: 10px;
-            height: 10px;
-            top: 0;
-            bottom: 0px;
-            left: 0px;
-            right: 0px;
-            background: red;
-            z-index: 20;
-            border: 10px red solid;
-            position absolute;  
-            display block  
-        
-    div
-        color #222
-        font-size 24px
-        font-weight 700
-        line-height 1.1em
-        margin 0 0 60px 0
-        
-        p
-            font-size 13px
-            color #999
-            margin 0
-            padding 0
-            line-height 31px
-            font-weight 300  
+    display: none;
 
 .highlight table td, .highlight table th, .highlight table tr
     border 0px
     padding 0px
 
-
 .highlight .code
-    width: 100%
+    width: $100
+ul.post-tag-list
+    list-style-type none
+    margin 0
+    display inline-block
+    li
+        padding 0 10px
+        border 1px #eee solid
+        background #f2f3f5
+        line-height 30px
+        height 30px
+        border-radius 3px
+        width auto
+        float left
+        margin-right 10px
+        font-size 13px
+        span.post-tag-list-count
+            color #999
+            padding-left 6px  
+
+.v .vlist .vcard .vh .vmeta .vat
+    color #222 !important
+figure.highlight
+    border 10px #222 solid
+    border-radius 3px 
+    overflow auto
+    margin 10px 0
+     
+.hljs
+    padding 0 10px !important
+    margin 5px 0
+    border-radius 5px
+    line-height 25px
+
 
 // style 2
 .bg_while
+    background #070707
     a
-        color #999    
-    background: #000
+        color #888
+    a:hover
+        color #FF513EFF    
+    .style_
+        background rgba(0,0,0,.1)
+        border #272727 1px solid
+    ._list
+        &_item:hover
+            background #161616
+        &_year
+            color #444
+        &_item    
+            &_time
+                color #444
+            &_title
+                color #888        
+    .search-right input
+        border 1px #888 solid
+    ul.post-tag-list li,
+    .v .vbtn
+        background #131313 !important  
+        border 1px #131313 solid !important      
     blockquote
         background #111
         border-left 8px #333 solid
     .hbe-button
         border 1px #444 solid
         color #666
-        // background #666
     .el-switch .el-switch-style:before
-        color #666
+        color #888
     .hbe-input-field-default
         color #999 !important 
     .hbe-input
         border-bottom #222 1px solid !important       
-    .xf
-        background rgba(0,0,0,.6)
-        border .5px #222 solid !important
-    .abc
-        a 
-            color #666 !important   
-    .nav
-        a
-            color #999
-    ul.post-tag-list li
-        border 1px #111 solid
-        background #222
-        a
-            color #aaa    
-    .list
-        h2
-            color #000
-            -webkit-text-stroke .6px #999
-        div
-            color #999
-            span.left
-                color #666
-            span.right
-                i
-                    color #444
-                a
-                    color #999    
-    .cont
-        color #999
-        div
-            color #999
+ 
     .v .vwrap
         border-color #333 !important;
     .v .vlist .vcard .vh
@@ -394,174 +349,112 @@ i#local-search-close
         background #222
     .v .vlist .vcard .vh .vmeta .vat
         color #fff !important  
-    nav.page-nav .current
-        color #fff
-             
 
+    ._detail
+        color #888
+        &_title,
+        &_time
+            color #888
+            
 
-.v .vwrap
-        border-color: #ddd !important;
-        background #fff
-.v .vwrap .vheader .vinput
-        display none !important
-.v .vwrap .vedit,.v .vinput
-        padding 0 !important   
-.v .vbtn
-        background #fff !important 
-.v .vlist .vcard .vh .vmeta .vat
-    color #222 !important
-figure.highlight
-    border:10px #222 solid;  
-    border-radius 3px; 
-    overflow auto
-     
-.hljs
-    padding 0 0.5em !important
-    margin 5px 0;
-    border-radius 5px
-    
+// 手机尺寸    
 @media screen and (max-width: 600px) {
-    
-    .v,ul.post-tag-list{
-        padding 0
+    .footer,
+    nav.page-nav{
+        m_yuliu(auto,0,20px)
     }
-    .prev_next{
-        width 100%
-        padding 0
-    }   
-    .logo{
-        left 0
-        top 0
-        svg{
-            float right
-            width 250px
-        }
+    .nav{
+        m_yuliu(auto,0,20px)
     }
     ul.archive-list{
-        padding 0
-        width 100%
-        li{
-            width 100%
-            text-align right
-            padding 0
-            font-size 1.2em
+        width $100
+    }
+    ul.archive-list li{
+        width $100
+        text-align right 
+    }
+    .search-right{
+        float left
+        width $100
+        input{
+            width calc($100 - 28px)
+            height 46px
+            margin-top 20px
         }
     }
-    .imgcenter{
-        margin 0 5px 0 0
-    }
-    .imgcenter:last-of-type{
-        margin 0
-    }   
-    .te{
-        display none
-        // left 0
-        // top 10px
-    }
-    .giveFive{
-        margin-left 0
-    }
-    .abc_logo{
-        position relative
-        margin auto
-        overflow hidden
-        width 40px
-        padding 0 20px
-    }
-    #bodyx{
-        padding 0 15px
-        width calc(100% - 30px)
-        
-    } 
-    .nav{
-        padding 120px 0 0 0
-        div{
-            width 100%
-            text-align right
-            
-            input{
-                text-align right
-                height 40px
-                border 2px #F16925 solid
-            }
-        }
-        div:nth-child(1){
-            display none
-        }
-        div:nth-child(2){
-            margin 0
-        }
-        div:last-of-type{
-            margin 10px 0 0 0
-            width 100%
-        }
-        
-    }
-    .list{
-        margin 0
-        h2{
-            font-size 2em
-            margin-top .8em
-            text-align left
-            color none
-            -webkit-text-stroke .5px #777
-        }
-        div{
-            padding 0 0 1em 0
-            span.left{
-                color #333
-            }
-            span.right{
-                // margin 0 34px
-                
+    #local-search-result{
+        m_yuliu($100,0,0)
 
-                i{
-                    color #777
-                    font-size 14px
-                    // line-height 18px
-                }
-                font{
-                    line-height 24px
-                    a{
-                        font-size 20px
-                        
-                        width 100%
-                    }
-                }
-                img{
-                    width 97px
-                    height 70px
-                    // width auto
-                    // height auto
-                    display block
-                }
-
-            }
-        }
     }
-    nav.page-nav, .footer{
+    .local-search-empty{
+        // padding-left 20px
+        margin-top 20px
+        display block
+        color red
         text-align center
     }
-    .cont {
-        margin 3em 0
-        padding 0
-        p{
-            color #555
-        }
-        div{
-            text-align:center;
-            margin-bottom:20px;
-        }
-    } 
-    .search-right{
-        float:right;
-        padding:0 0 0 0;
-    } 
-    .st0{
-        // display none
+    ul.search-result-list{
+        margin-left 40px
+        margin-top 20px
     }
-    .hbe-content{
-        padding 0 30px !important
-    }  
+    .logo{
+        position relative
+        left auto
+        top 20px
+        width calc($100 - 20px)
+        svg{
+            float right
+        }
+    }
+    ._list{
+       m_yuliu(auto,0,20px)
+    }
+    ._list_year{
+        width auto
+        padding 50px 0 0 0
+    }
+    .ekrt{
+        display flex
+    }
+    ._list_item_title{
+        font-size 20px
+    }
+    ._list_item{
+        width auto
+        padding 0
+        margin 50px 0 0 0 
+        &_con{
+            height auto
+            img{
+                height 100%
+                object-fit cover
+            }
+        }
+    }
+    ._list_item:hover{
+        background none 
+    }
+    ._list_item_time{
+        margin-top 10px
+    }
+    
+// detail
+    .v,
+    ._detail,
+    .prev_next{
+        m_yuliu(auto,0,20px)
+    } 
+    ._detail{
+        padding-top 30px
+        padding-bottom 30px
+        &_title,
+        &_time{
+            text-align center
+        }
+        &_cont{
+            m_yuliu(auto,20px,0)
+        }
+    }   
 }
+
 

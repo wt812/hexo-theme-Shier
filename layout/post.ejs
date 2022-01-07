@@ -1,27 +1,20 @@
-<%- partial('_partial/logo') %>
 <%- partial('_partial/nav') %>
 <!-- 内容 -->
-<div class="cont">
-<div style="position:relative">
-<!-- <i class="xf te" onclick="window.history.go(-1)">➜</i>  -->
+<div class="_detail">
+    <div class="_detail_title"><%= page.title %></div>
+    <div class="_detail_time"><%= date(page.date, "YYYY/MM/DD h:mm:ss a") %></div>
 
-<%= page.title %>
-<p><%= date(page.date, "YYYY/MM/DD") %>
+    <div class="_detail_cont"><%- page.content %></div>
+
+    <div class="_detail_tags">
+        <% if (page.tags && page.tags.length){ %>
+        <%- list_tags(page.tags, {
+            show_count: true,
+            class: "post-tag",
+        }) %>
+        <% } %>
+    </div>
 </div>
-<%- page.content %> 
-</div>
-
-<!-- tags -->
-<% if (page.tags && page.tags.length){ %>
-  <%- list_tags(page.tags, {
-    show_count: false,
-    class: 'post-tag'
-  }) %>
-<% } %>
-
-<!-- 评论 -->
-
-
 
 
 
@@ -38,7 +31,7 @@
         上一篇&nbsp;&nbsp;<%= page.prev.title %>
         </a>
      <% } else if(page.prev.notcontent){ %>
-        上一篇&nbsp;&nbsp;<%= page.prev.notcontent %> 无详细内容
+        上一篇&nbsp;&nbsp;<%= page.prev.notcontent %> [无内容]
      <% } %>
 
 <% }%>
@@ -53,7 +46,7 @@
         下一篇&nbsp;&nbsp;<%= page.next.title %>
         </a>
      <% } else if(page.next.notcontent){ %>
-        下一篇&nbsp;&nbsp;<%= page.next.notcontent %> 无详细内容
+        下一篇&nbsp;&nbsp;<%= page.next.notcontent %> [无内容]
      <% } %>
 
 <% } %>
